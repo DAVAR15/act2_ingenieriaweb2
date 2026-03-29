@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'http://localhost:4000/api',
+  // Usar variable de despliegue en Vercel, o caer a localhost en desarrollo
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:4000/api',
   headers: { 'Content-Type': 'application/json' },
   timeout: 10000
 });
